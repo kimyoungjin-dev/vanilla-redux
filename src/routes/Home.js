@@ -33,14 +33,14 @@ const Home = ({ todos, addTodo }) => {
       </form>
       <ul>
         {todos.map((todo) => (
-          <ToDo {...todo} />
+          <ToDo {...todo} key={todo.id} />
         ))}
       </ul>
     </div>
   );
 };
 const mapStateToProps = (state, ownProps) => {
-  return { todos: state };
+  return { todos: state }; //todos는 지금 props이다.
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
